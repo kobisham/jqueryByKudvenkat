@@ -1,0 +1,39 @@
+﻿<html lang="he">
+<head>
+    <title>a</title>
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous">
+
+        
+        
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var JSONString = '[{"firstName":"Kobi","lastName":"Shamir","gender":"male","salary":25000},{"firstName":"Avi","lastName":"Shamir","gender":"male","salary":30000},{"firstName":"Sarit","lastName":"Shamir","gender":"female","salary":40000}]';
+
+            
+            
+            var employeesJSON = JSON.parse(JSONString);
+            var result = '';
+            $.each(employeesJSON, function (i, item) {
+                result += "First name: " + item.firstName + '</br>';
+                result += "Last Name: " + item.lastName + '</br>';
+                result += "Gender: " + item.gender + '</br>';
+                result += "Salary: " + item.salary + '</br></br>';
+            });
+            $("#divResult").html(result);
+
+           
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 id="divResult"></h1>
+    </div>
+</body>
+</html>
