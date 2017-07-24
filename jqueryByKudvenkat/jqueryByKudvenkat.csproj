@@ -65,6 +65,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="animate.html" />
+    <Content Include="GetHelpTextInXml.aspx" />
+    <Content Include="GetHelpTextInJson.aspx" />
+    <Content Include="GetHelpText.aspx" />
+    <Content Include="help.html" />
+    <Content Include="jQueryAjaxGetLoadXmlData.html" />
+    <Content Include="jQueryAjaxGetLoadJsonData.html" />
+    <Content Include="jQueryAjaxGet.html" />
+    <Content Include="jQueryAjaxLoadFromASPX.html" />
+    <Content Include="jQueryAjaxLoad.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-2.2.1.min.map" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -101,6 +111,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Employee.cs" />
+    <Compile Include="GetHelpTextInXml.aspx.cs">
+      <DependentUpon>GetHelpTextInXml.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetHelpTextInXml.aspx.designer.cs">
+      <DependentUpon>GetHelpTextInXml.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetHelpTextInJson.aspx.cs">
+      <DependentUpon>GetHelpTextInJson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetHelpTextInJson.aspx.designer.cs">
+      <DependentUpon>GetHelpTextInJson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetHelpText.aspx.cs">
+      <DependentUpon>GetHelpText.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetHelpText.aspx.designer.cs">
+      <DependentUpon>GetHelpText.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

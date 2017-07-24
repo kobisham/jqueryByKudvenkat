@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        $(document).ready(function () {
+            $("#btnAnimate").click(function () {
+                $("#myDiv").animate({
+                    'font-size':50
+                },1000);
+               
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <button id="btnAnimate">Animate</button>
+    <div id="myDiv">This is some text.</div>
+
+</body>
+</html>
