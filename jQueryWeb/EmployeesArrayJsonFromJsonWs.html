@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        $(document).ready(function () {
+            $("#btnGetAllEmployees").click(function () {
+                
+                $.ajax({
+                    method: "POST",
+                    url: "EmployeesServiceAsJson.asmx/GetAllEmployeesJson",
+                    dataType: "json",
+                    success: function (data) {
+                        var employeeTable = $("#tblEmployee tbody");
+                        employeeTable.empty(); 
+                        $(data).each(function (index,emp) {
+                            employeeTable.append('<tr><td>' + emp.Id + '</td><td>' +
+                                emp.Name + '</td><td>' + emp.Gender + '</td><td>' +
+                                emp.Salary + '</td></tr>');
+
+                        });
+                        
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                    }
+                });
+
+            });
+        });
+    </script>
+</head>
+
+
+<body style="font-family:Arial">
+    <input type="button" id="btnGetAllEmployees" value="Get All Employees" />
+    <br /><br />
+    <table id="tblEmployee" border="1" style="border-collapse:collapse">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>

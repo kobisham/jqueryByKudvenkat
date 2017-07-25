@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        $(document).ready(function () {
+            $("#btnGetEmployee").click(function () {
+                var empId = $("#txtId").val();
+                $.ajax({
+                    method: "POST",
+                    url: "EmployeeServiceAsJson.asmx/GetEmployeeByIdJson",
+                    data: { employeeId: empId},
+                    dataType: "json",
+                    success: function (data) {
+                        $("#txtName").val(data.Name);
+                        $("#txtGender").val(data.Gender);
+                        $("#txtSalary").val(data.Salary);
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                    }
+                });
+
+            });
+        });
+    </script>
+</head>
+
+
+<body style="font-family:Arial">
+    ID : <input id="txtId" type="text" style="width:100px" />
+    <input type="button" id="btnGetEmployee" value="Get Employee" />
+    <br /><br />
+    <table border="1" style="border-collapse:collapse">
+        <tr>
+            <td>Name</td>
+            <td><input id="txtName" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><input id="txtGender" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td><input id="txtSalary" type="text" /></td>
+        </tr>
+    </table>
+</body>
+</html>
